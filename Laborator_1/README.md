@@ -1,6 +1,6 @@
 ## Lab_1 SQL
 <p>------------------------------------------------------------------------------</p>
-<ol>
+<ul>
   <li>SELECT Basics</li>
   <li>Simple ALIAS</li>
   <li>Multiple ALIAS</li>
@@ -12,4 +12,4 @@
   <li>IS Operator (IS NULL)</li>
   <li>IS NOT NULL</li>
   <li>SUBSTR Function</li>
-</ol>
+</ul>
