@@ -12,4 +12,4 @@
   <li>JOIN INTRO</li>
   <li>INNER JOIN</li>
   
-### IMPORTANT!!LEFT,RIGHT JOIN (Look at the problem 17,18)
+### IMPORTANT!!LEFT,RIGHT JOIN (Look at the problem 17,18) 
