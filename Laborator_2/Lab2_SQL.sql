@@ -33,7 +33,7 @@ SELECT TO_CHAR(SYSDATE, 'MONTH') FROM DUAL;
 Scrie?i o cerere care are urm?torul rezultat pentru fiecare angajat:
 <prenume angajat> <nume angajat> castiga <salariu> lunar dar doreste <salariu de 3 ori mai mare>. 
 Etichetati coloana
-“Salariu ideal”. Pentru concatenare, utiliza?i atât func?ia CONCAT cât ?i operatorul “||”.
+â€œSalariu idealâ€. Pentru concatenare, utiliza?i atÃ¢t func?ia CONCAT cÃ¢t ?i operatorul â€œ||â€.
 */
 
 SELECT last_name || ' ' || first_name || ' castiga: ' || salary || ' lunar dar doreste ' || (salary * 3)
@@ -44,7 +44,7 @@ FROM EMPLOYEES;
 2.
 Scrie?i o cerere prin care s? se afi?eze prenumele salariatului
 cu prima litera majuscul? ?i toate celelalte litere mici, numele acestuia cu majuscule ?i lungimea numelui, 
-pentru angaja?ii al c?ror nume începe cu J sau M sau care au a treia liter? din nume A. Rezultatul va fi 
+pentru angaja?ii al c?ror nume Ã®ncepe cu J sau M sau care au a treia liter? din nume A. Rezultatul va fi 
 ordonat descresc?tor dup? lungimea numelui. Se vor eticheta coloanele corespunz?tor.
 Se cer 2 solu?ii (cu operatorul LIKE ?i func?ia SUBSTR).
 */
@@ -62,8 +62,8 @@ ORDER BY LENGTH(first_name) DESC;
 -----------------------------------------------------------------------------------------------
 /*
 3.
-S? se afi?eze pentru angaja?ii cu prenumele „Steven”, codul, numele ?i 
-codul departamentului în care lucreaz?. C?utarea trebuie s? nu fie case-sensitive,
+S? se afi?eze pentru angaja?ii cu prenumele â€žStevenâ€, codul, numele ?i 
+codul departamentului Ã®n care lucreaz?. C?utarea trebuie s? nu fie case-sensitive,
 iar eventualele blank-uri care preced sau urmeaz? numelui trebuie ignorate.
 
 INTREBARE: AR TREBUI ADAUGATA INCA O CONDITIE AND ?? 
@@ -79,7 +79,7 @@ WHERE (first_name = 'Steven' OR first_name = 'steven');
 /*
 
 4. S? se afi?eze pentru to?i angaja?ii al c?ror nume se termin? cu litera 'e', codul, numele, 
-lungimea numelui ?i pozi?ia din nume în care apare prima data litera 'a'. 
+lungimea numelui ?i pozi?ia din nume Ã®n care apare prima data litera 'a'. 
 Utiliza?i alias-uri corespunz?toare pentru coloane.
     INTREBARE: CA FUNCTIA SA INTOARCA NUMARUL INDEXULUI IN CARE APARE LITERA X AR TREBUI SA PUNEM SI TO_NUMBER ? 
         SELECT employee_id, first_name, length(first_name) , TO_NUMBER(INSTR(first_name, 'a'))
@@ -101,11 +101,11 @@ WHERE SUBSTR(first_name, -1,1) = 'e'
 ORDER BY employee_id ASC;
 -----------------------------------------------------------------------------------------------
 /*
-5. S? se afi?eze detalii despre salaria?ii care au lucrat un num?r întreg de s?pt?mâni pân? la data curent?
- expr_date1 – expr_date2
+5. S? se afi?eze detalii despre salaria?ii care au lucrat un num?r Ã®ntreg de s?pt?mÃ¢ni pÃ¢n? la data curent?
+ expr_date1 â€“ expr_date2
 */
 
---TO_DATE  expr_date1 – expr_date2
+--TO_DATE  expr_date1 â€“ expr_date2
 SELECT  FLOOR(SYSDATE - HIRE_DATE), HIRE_DATE,TO_CHAR(HIRE_DATE,'DAY')
 FROM EMPLOYEES
 WHERE MOD(FLOOR(SYSDATE - HIRE_DATE),7)=0;
@@ -114,7 +114,7 @@ WHERE MOD(FLOOR(SYSDATE - HIRE_DATE),7)=0;
 /*
 6. S? se afi?eze codul salariatului, numele, salariul, salariul m?rit cu 15%, exprimat cu dou?
 zecimale ?i num?rul de sute al salariului nou rotunjit la 2 zecimale. Eticheta?i ultimele dou?
-coloane “Salariu nou”, respectiv “Numar sute”. Se vor lua în considerare salaria?ii al c?ror
+coloane â€œSalariu nouâ€, respectiv â€œNumar suteâ€. Se vor lua Ã®n considerare salaria?ii al c?ror
 salariu nu este divizibil cu 1000.
 */
 SELECT employee_id, last_name, salary "SALARIU VECHI",
@@ -128,8 +128,8 @@ ORDER BY employee_id;
 -----------------------------------------------------------------------------------------------
 /*
 17. S? se afi?eze numele salariatului, codul ?i numele departamentului pentru to?i angaja?ii.
-Obs: Numele sau alias-urile tabelelor sunt obligatorii în dreptul coloanelor care au acela?i
-nume în mai multe tabele. Altfel, nu sunt necesare dar este recomandat? utilizarea lor pentru
+Obs: Numele sau alias-urile tabelelor sunt obligatorii Ã®n dreptul coloanelor care au acela?i
+nume Ã®n mai multe tabele. Altfel, nu sunt necesare dar este recomandat? utilizarea lor pentru
 o mai bun? claritate a cererii.
 */
 SELECT e.employee_id, e.last_name, d.department_name "Nume Departament"
@@ -138,7 +138,7 @@ ORDER BY e.employee_id ASC, d.department_id  ASC;
 
 -----------------------------------------------------------------------------------------------
 /*
-18. S? se listeze titlurile job-urile care exist? în departamentul 30.
+18. S? se listeze titlurile job-urile care exist? Ã®n departamentul 30.
 */
 SELECT j.job_id, j.job_title, d.department_id
 FROM DEPARTMENTS d left JOIN JOB_HISTORY jh ON (d.department_id = jh.department_id) 
@@ -153,6 +153,66 @@ WHERE d.department_id = 30;
 select department_id from departments
 where department_id = 30;
 
+
+                             
+--Operatori pe multimi
+-- Subcereri- improtant
+
+--pt fiecare anagajat sa se afiseze numele si o coloana care reprezinta nr de vocale /conseoane din nume preferinta la INSTR prob pt vineri
+
+--consoanle , nr vocale - nr consoane
+
+--sirul care se traduce, si cel  ce se traduce
+
+select replace ('$a$aa', , '$') 
+from dual;
+
+--care este prima zi de luni incepand cu data de  ....  -> add_mounth, add_day
+
+--mounth bettween prima oara data mare dupa data mica 
+
+
+--Problema 11 
+--hire_date + 6 luni care pica luni
+
+select last_name || ' ' || first_name, hire_date, next_day(add_month(hire_date, 6), 'Monday')
+from employees;
+
+
+
+--sa se listeze numele si data ang pt salariatii care nu castiga comison; folositi rpad pt anu se afla truncchiat
+select last_name, rpad(hire_date,15)
+from employees
+where commission_pct is not null;
+
+
+/*
+DECODE
+-daca a =a intoarce a daca nu c daor cand avem egalitate in if , a=b, nu daca in a se afla ceva de genul b
+-b=a intoarce b daca nu  c
+-salariu pe  pozitia a3
+-nu putem avem operator like in decode
+-sa  valori daca NU e egal
+ */
+ 
+ 
+--Problema 16 cu decode
+select last_name, job_id,salary, 
+salary* decode(job_id, 'IT_PROG', 1.2, 'SA_REP',1.25, 'SA_MAN', 1.35,salary) "salariu  negoicat" --1.2 20% 1.25 25%, 1.35 35%
+from employees;
+
+
+-- Problema 16 mai elegant 
+
+select last_name, job_id,salary, 
+salary* decode(job_id, 'IT_PROG', 1.2, 'SA_REP',1.25, 'SA_MAN', 1.35,salary) "salariu  negoicat" --1.2 20% 1.25 25%, 1.35 35%
+from employees;
+
+--18 angajatii au jobul , nu departamentele
+
+select 
+from employees join jobs on (employees.job_id = jobs.job_id)
+where department_id = 30;
 
 
 
