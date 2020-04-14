@@ -16,11 +16,28 @@ FUNCTII SINGLE-ROW
         * TO_CHAR(SYSDATE, 'DD/MM/YYYY') = '02/12/2005';
         
     - TO_DATE - Converteste un numar sau sir de caractere intr-o data.
-        * TO_DATE('02-DEC-2005', dd-mon-yyyy);
-        * 
-        
+        * TO_DATE('02-DEC-2005', dd-mon-yyyy);  
+
 */
 
+select replace ('$a$aa', , '$') 
+from dual;
+
+/*
+DECODE
+-daca a =a intoarce a daca nu c daor cand avem egalitate in if , a=b, nu daca in a se afla ceva de genul b
+-b=a intoarce b daca nu  c
+-salariu pe  pozitia a3
+-nu putem avem operator like in decode
+-sa  valori daca NU e egal
+ */
+
+/* Pentru fiecare anagajat sa se afiseze numele si o coloana care reprezinta nr de vocale /conseoane din nume preferinta la INSTR prob pt vineri
+consoanle , nr vocale - nr consoane ||| sirul care se traduce, si cel  ce se traduce */
+
+select last_name, initcap(replace(translate(lower(last_name),'aeiou','#'),'#'))
+from employees;
+                                  
 SELECT * FROM DUAL;
 DESC DUAL;
 
@@ -124,8 +141,85 @@ ROUND(TO_NUMBER((salary + (salary * 15/100)),'99999.99') / 100,2) "NR DE SUTE"
 FROM EMPLOYEES
 WHERE MOD(salary,1000) >= 1
 ORDER BY employee_id;
+                             
+
+/* 7. Să se listeze numele şi data angajării salariaţilor care câştigă comision. Să se eticheteze
+coloanele „Nume angajat”, „Data angajarii”. Pentru a nu obţine alias-ul datei angajării
+trunchiat, utilizaţi funcţia RPAD. */
+                             
+select last_name, rpad(hire_date,15)
+from employees
+where commission_pct is not null;
 
 -----------------------------------------------------------------------------------------------
+  
+/* PROBLEMA 11 
+Să se afişeze numele şi prenumele angajatului (într-o singură coloană), data angajării şi
+data negocierii salariului, care este prima zi de Luni după 6 luni de serviciu. Etichetaţi
+această coloană “Negociere”. 
+                             
+care este prima zi de luni incepand cu data de  ....  -> add_mounth, add_day
+mounth bettween prima oara data mare dupa data mica 
+hire_date + 6 luni care pica luni */
+
+SELECT last_name || '  ' || first_name "NUME", hire_date,
+       NEXT_DAY(ADD_MONTHS(hire_date, 6), 'Monday') "Negociere" 
+FROM employees;
+
+
+select last_name || ' ' || first_name, hire_date, next_day(add_month(hire_date, 6), 'Monday')
+from employees;
+
+
+-----------------------------------------------------------------------------------------------
+/* PROBLEMA 16 
+ Să se afişeze numele, codul job-ului, salariul şi o coloană care să arate salariul după
+mărire. Se presupune că pentru IT_PROG are loc o mărire de 20%, pentru SA_REP
+creşterea este de 25%, iar pentru SA_MAN are loc o mărire de 35%. Pentru ceilalţi
+angajaţi nu se acordă mărire. Să se denumească coloana "Salariu renegociat".  */
+
+select last_name, job_id, salary,
+decode(job_id,'IT_PROG',salary*1.2,'SA_REP',salary*1.25,
+'SA_MAN',salary*1.35,salary) "Salariu renegociat"
+from employees;
+
+-- PROBLEMA 16 CU CASE
+select last_name, job_id, salary,
+salary*
+(case job_id
+  when 'IT_PROG' then 1.2
+  when 'SA_REP' then 1.25
+  when 'SA_MAN' then 1.35
+  else 1
+  end) "Salariu renegociat"
+from employees;
+
+-- PROBLEMA 16 case general
+select last_name, job_id, salary,
+salary*
+(case  
+  when job_id='IT_PROG' then 1.2
+  when job_id='SA_REP' then 1.25
+  when job_id='SA_MAN' then 1.35
+  else 1
+  end) "Salariu renegociat"
+from employees;
+
+--SAU
+
+select last_name, job_id, salary,
+salary*
+(case  
+  when job_id in ('IT_PROG', 'SH_CLERK') then 1.2
+  when job_id='SA_REP' then 1.25
+  when job_id='SA_MAN' then 1.35
+  else 1
+  end) "Salariu renegociat"
+from employees;
+
+-----------------------------------------------------------------------------------------------
+                             
+
 /*
 17. S? se afi?eze numele salariatului, codul ?i numele departamentului pentru to?i angaja?ii.
 Obs: Numele sau alias-urile tabelelor sunt obligatorii în dreptul coloanelor care au acela?i
@@ -153,66 +247,13 @@ WHERE d.department_id = 30;
 select department_id from departments
 where department_id = 30;
 
-
-                             
---Operatori pe multimi
--- Subcereri- improtant
-
---pt fiecare anagajat sa se afiseze numele si o coloana care reprezinta nr de vocale /conseoane din nume preferinta la INSTR prob pt vineri
-
---consoanle , nr vocale - nr consoane
-
---sirul care se traduce, si cel  ce se traduce
-
-select replace ('$a$aa', , '$') 
-from dual;
-
---care este prima zi de luni incepand cu data de  ....  -> add_mounth, add_day
-
---mounth bettween prima oara data mare dupa data mica 
-
-
---Problema 11 
---hire_date + 6 luni care pica luni
-
-select last_name || ' ' || first_name, hire_date, next_day(add_month(hire_date, 6), 'Monday')
-from employees;
-
-
-
---sa se listeze numele si data ang pt salariatii care nu castiga comison; folositi rpad pt anu se afla truncchiat
-select last_name, rpad(hire_date,15)
-from employees
-where commission_pct is not null;
-
-
-/*
-DECODE
--daca a =a intoarce a daca nu c daor cand avem egalitate in if , a=b, nu daca in a se afla ceva de genul b
--b=a intoarce b daca nu  c
--salariu pe  pozitia a3
--nu putem avem operator like in decode
--sa  valori daca NU e egal
- */
- 
- 
---Problema 16 cu decode
-select last_name, job_id,salary, 
-salary* decode(job_id, 'IT_PROG', 1.2, 'SA_REP',1.25, 'SA_MAN', 1.35,salary) "salariu  negoicat" --1.2 20% 1.25 25%, 1.35 35%
-from employees;
-
-
--- Problema 16 mai elegant 
-
-select last_name, job_id,salary, 
-salary* decode(job_id, 'IT_PROG', 1.2, 'SA_REP',1.25, 'SA_MAN', 1.35,salary) "salariu  negoicat" --1.2 20% 1.25 25%, 1.35 35%
-from employees;
-
 --18 angajatii au jobul , nu departamentele
 
 select 
 from employees join jobs on (employees.job_id = jobs.job_id)
 where department_id = 30;
+
+
 
 
 
