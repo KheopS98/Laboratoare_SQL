@@ -3,3 +3,4 @@
 ## HR_Scripts, needed for DataBase
 ## Laborator_1 (Please check  the ReadMe, u will find what topics are covered)
 ## Laborator_2 (Please check  the ReadMe, u will find what topics are covered)
+## Laborator_3 (Please check  the ReadMe, u will find what topics are covered)
