@@ -1,17 +1,18 @@
 
------ LABBBBB 5555555555555
-7.
+Problema 7
+/*
+Sa se afiseze numele si salariul celor mai prost platiti angajati din fiecare departament 
+(se cer 3 solutii: subcerere sincronizata, subcerere nesincronizata si  subcerere în clauza FROM).
 
--sub sync
-
---sub nesyc
-
---sub from
+*/
 
 
 ------------------------------
 
-Sa se obtina numele primilor 3 angajati avand salariul maxim. Rezultatul se va afişa în ordine       crescătoare a salariilor.
+Problema 10 
+/* 
+Sa se obtina numele primilor 3 angajati avand salariul maxim. Rezultatul se va afişa în ordine crescătoare a salariilor.
+*/
 
 select employee_id, salary
 from (select * 
@@ -44,11 +45,3 @@ from employees
 where hire_date > (select max(hire_date)
                  from employees
                  where lower(last_name)='king'); 
-
-
-
-
-
-
-
-
