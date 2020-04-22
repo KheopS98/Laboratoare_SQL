@@ -89,13 +89,15 @@ HAVING AVG(salary)=(SELECT min(avg(salary))
                     FROM EMPLOYEES
                     GROUP BY job_id);
 
-/*27
+/*
  * sub cerer in select = o valoare(1linie, 1 coloana)
  * sub in from = doar nesinc
 	- grija la col folosita in join
 	- col calc in from primesc nume
 */
+			       
 Problema 27
+			       
 /*
 Scrieţi o cerere pentru a afişa job-ul, salariul total pentru job-ul respectiv pe departamente 
  si salariul total pentru job-ul respectiv pe departamentele 30, 50, 80.
@@ -120,6 +122,65 @@ FROM EMPLOYEES e
 GROUP BY department_id, job_id
 GROUP BY department_id, job_id;
 
+Problema 28
+
+/* 
+Să se creeze o cerere prin care să se afişeze numărul total de angajaţi şi, din acest total, numărul celor care au fost 
+angajaţi în 1997, 1998, 1999 si 2000. Denumiti capetele de tabel in mod corespunzator.
+*/
+
+SELECT COUNT(employee_id) total,
+(SELECT COUNT(employee_id)
+ FROM EMPLOYEES
+ WHERE to_char(hire_date,'yyyy')=1997) An1997,
+ (SELECT COUNT(employee_id)
+ FROM EMPLOYEES
+ WHERE to_char(hire_date,'yyyy')=1998) An1998
+FROM EMPLOYEES
+GROUP BY 8;
+
+-- SAU MAI USOR
+
+SELECT (SELECT COUNT(employee_id) FROM employees) total,
+(SELECT COUNT(employee_id)
+ FROM EMPLOYEES
+ WHERe to_char(hire_date,'yyyy')=1997) An1997,
+ (SELECT COUNT(employee_id)
+ FROM EMPLOYEES
+ WHERe to_char(hire_date,'yyyy')=1998) An1998
+FROM DUAL;
+
+
+--SUBCERE IN FROM DOAR NESINCRONIZATE - > PT CA FROM SE EXECUTA PRIMUL , IAR O SUBCERE IN FROM INSEAMAN NESICRONIZATA
+			       
+PRoblemele 31, 32,34  
+/*
+31. Să se afişeze numele, salariul, codul departamentului si salariul mediu din departamentul respectiv.
+32. Modificaţi cererea anterioară, pentru a determina şi listarea numărului de angajaţi din departamente.
+34.  Rezolvaţi problema 22 cu ajutorul subcererilor specificate în clauza FROM.
+*/
+
+SELECT last_name, salary, department_id, medie,nr
+
+FROM employees JOIN (SELECT avg(salary) medie, 
+                       COUNT(*) nr,department_id
+                      FROM employees
+                      GROUP BY department_id) 
+USING (department_id);   
 
 
 
+
+Problema 33
+/*
+Pentru fiecare departament, să se afişeze numele acestuia, numele şi salariul celor mai prost plătiţi angajaţi din cadrul său.
+*/
+
+SELECT  D.DEPARTMENT_NAME, DEPARTMENT_ID,minSALARY,
+FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME
+FROM EMPLOYEES JOIN (SELECT DEPARTMENT_ID,min(salary) minSALARY
+                      FROM EMPLOYEES
+                      GROUP BY DEPARTMENT_ID)
+                USING(DEPARTMENT_ID)
+      RIGHT JOIN departments d using(department_id)
+WHERE salary = minSalary OR employee_id IS NULL;
