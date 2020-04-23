@@ -28,3 +28,4 @@ Modify it to show the country and the area for countries with an area between 20
 SELECT name, area FROM  world
 WHERE area BETWEEN 200000 AND 250000
 ORDER BY area;
+
