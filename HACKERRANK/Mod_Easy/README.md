@@ -3,9 +3,24 @@
     <th>Field</th>
     <th>Type</th>
   </tr>
+  
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+    <td>ID</td>
+    <td>NUMBER</td>
+  </tr>
+  
+  <tr>
+    <td>NAME</td>
+    <td>VARCHAR2(17)</td>
+  </tr>
+  <tr>
+    <td>COUNTRYCODE</td>
+    <td>VARCHAR2(3)</td>
+  </tr>
+  
+  <tr>
+    <td>ID</td>
+    <td>NUMBER</td>
   </tr>
 </table>
 
