@@ -114,3 +114,20 @@ WHERE countrycode = 'JPN';
 1681 Omuta JPN Fukuoka 142889 
 1739 Tokuyama JPN Yamaguchi 107078
 </pre>
+
+## Problema 6
+<p>Query the <b>names</b> of all the Japanese cities in the CITY table. The <b>COUNTRYCODE</b> for Japan is JPN.</p>
+<p><b>SOLUTION</b></p>
+<pre><code>
+SELECT name FROM city
+WHERE countrycode = 'JPN';
+</code></pre>
+
+<p><b>OUTPUT</b></p>
+<pre>
+Neyagawa 
+Ageo 
+Sayama 
+Omuta 
+Tokuyama 
+</pre>
