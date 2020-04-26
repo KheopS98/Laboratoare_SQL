@@ -131,8 +131,8 @@ Sayama
 Omuta 
 Tokuyama 
 </pre>
-
-<br><hr>
+<hr>
+<br>
 
 <table>
   <caption><b>STATION</b></caption>
