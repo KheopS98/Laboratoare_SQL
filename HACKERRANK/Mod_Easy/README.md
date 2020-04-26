@@ -165,5 +165,5 @@ Tokuyama
     <td>NUMBER</td>
   </tr>
 </table>
-<p> Where LAT_N is the northern latitude and LONG_W is the western longitude. </p>
+<p> Where <b>LAT_N</b> is the northern latitude and <b>LONG_W</b> is the western longitude. </p>
 
