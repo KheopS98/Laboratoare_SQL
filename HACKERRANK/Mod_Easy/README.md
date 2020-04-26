@@ -1,4 +1,5 @@
 ## Problema 1
+<p><b>OUTPUT</b></p>
 <pre>
 3878 Scottsdale USA Arizona 202705 
 3965 Corona USA California 124966 
