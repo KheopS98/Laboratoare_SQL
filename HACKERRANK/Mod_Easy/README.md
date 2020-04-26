@@ -37,6 +37,7 @@
 SELECT * FROM city
 WHERE population > 100000 AND countrycode = 'USA';
 </code>
+
 <p><b>OUTPUT</b></p>
 <pre>
 3878 Scottsdale USA Arizona 202705 
@@ -49,10 +50,13 @@ WHERE population > 100000 AND countrycode = 'USA';
 ## Problema 2
 <p>Query the <b>names</b> of all American cities in CITY with populations larger than 120000. The CountryCode for America is USA.</p>
 <p><b>SOLUTION</b></p>
+<pre>
 <code>
 SELECT name FROM city 
 WHERE population > 120000 AND countrycode = 'USA';
 </code>
+</pre>
+
 <p><b>OUTPUT</b></p>
 <pre>
 Scottsdale
