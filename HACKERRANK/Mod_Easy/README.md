@@ -1,5 +1,5 @@
 <table>
-  <caption>CITY</caption>
+  <caption><b>CITY</b></caption>
   <tr>
     <th>Field</th>
     <th>Type</th>
