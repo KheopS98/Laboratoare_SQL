@@ -33,12 +33,10 @@
 ## Problema 1
 <p>Query <b>all columns</b> for all American cities in CITY with populations larger than 100000. The CountryCode for America is USA.</p>
 <p><b>SOLUTION</b></p>
-<pre>
-<code>
+<pre><code>
 SELECT * FROM city
 WHERE population > 100000 AND countrycode = 'USA';
-</code>
-</pre>
+</code></pre>
 
 <p><b>OUTPUT</b></p>
 
@@ -53,12 +51,10 @@ WHERE population > 100000 AND countrycode = 'USA';
 ## Problema 2
 <p>Query the <b>names</b> of all American cities in CITY with populations larger than 120000. The CountryCode for America is USA.</p>
 <p><b>SOLUTION</b></p>
-<pre>
-<code>
+<pre><code>
 SELECT name FROM city 
 WHERE population > 120000 AND countrycode = 'USA';
-</code>
-</pre>
+</code></pre>
 
 <p><b>OUTPUT</b></p>
 <pre>
@@ -71,12 +67,10 @@ Cedar Rapids
 ## Problema 3
 <p>Query <b>all columns (attributes)</b> for every row in the CITY table.</p>
 <p><b>SOLUTION</b></p>
-<pre>
-<code>
+<pre><code>
 DESC city;
 SELECT * FROM city;
-</code>
-</pre>
+</code></pre>
 
 <p><b>OUTPUT</b></p>
 <pre>
