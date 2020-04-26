@@ -1,3 +1,31 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+  </tr>
+</table>
+
 ## Problema 1
 <p>Query all columns for all American cities in CITY with populations larger than 100000. The CountryCode for America is USA.</p>
 <p><b>SOLUTION</b></p>
