@@ -97,3 +97,20 @@ WHERE ID = 1661;
 <pre>
 1661 Sayama JPN Saitama 162472
 </pre>
+
+## Problema 5
+<p>Query <b>all attributes</b> of every Japanese city in the CITY table. The <b>COUNTRYCODE</b> for Japan is JPN.</p>
+<p><b>SOLUTION</b></p>
+<pre><code>
+SELECT * FROM city
+WHERE countrycode = 'JPN';
+</code></pre>
+
+<p><b>OUTPUT</b></p>
+<pre>
+1613 Neyagawa JPN Osaka 257315 
+1630 Ageo JPN Saitama 209442 
+1661 Sayama JPN Saitama 162472 
+1681 Omuta JPN Fukuoka 142889 
+1739 Tokuyama JPN Yamaguchi 107078
+</pre>
