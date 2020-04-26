@@ -84,3 +84,16 @@ SELECT * FROM city;
 4058 Boulder USA Colorado 91238 
 4061 Fall River USA Massachusetts 90555 
 </pre>
+
+## Problema 4
+<p>Query <b>all columns</b> for a city in CITY with the <b>ID</b> 1661.</p>
+<p><b>SOLUTION</b></p>
+<pre><code>
+SELECT * FROM city
+WHERE ID = 1661;
+</code></pre>
+
+<p><b>OUTPUT</b></p>
+<pre>
+1661 Sayama JPN Saitama 162472
+</pre>
