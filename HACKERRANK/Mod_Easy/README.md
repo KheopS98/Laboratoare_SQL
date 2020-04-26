@@ -1,4 +1,8 @@
 ## Problema 1
+<code>
+SELECT * FROM city
+WHERE population > 100000 AND countrycode = 'USA';
+</code>
 <p><b>OUTPUT</b></p>
 <pre>
 3878 Scottsdale USA Arizona 202705 
