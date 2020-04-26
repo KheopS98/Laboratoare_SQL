@@ -45,3 +45,18 @@ WHERE population > 100000 AND countrycode = 'USA';
 3977 Cedar Rapids USA Iowa 120758 
 3982 Coral Springs USA Florida 117549 
 </pre>
+
+## Problema 2
+<p>Query the <b>names</b> of all American cities in CITY with populations larger than 120000. The CountryCode for America is USA.</p>
+<p><b>SOLUTION</b></p>
+<code>
+SELECT name FROM city 
+WHERE population > 120000 AND countrycode = 'USA';
+</code>
+<p><b>OUTPUT</b></p>
+<pre>
+Scottsdale
+Corona
+Concord
+Cedar Rapids
+</pre>
