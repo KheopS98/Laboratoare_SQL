@@ -1,4 +1,5 @@
 <table>
+  <caption>CITY</caption>
   <tr>
     <th>Field</th>
     <th>Type</th>
@@ -19,7 +20,12 @@
   </tr>
   
   <tr>
-    <td>ID</td>
+    <td>DISTRICT</td>
+    <td>VARCHAR2(20)</td>
+  </tr>
+  
+  <tr>
+    <td>POPULATION</td>
     <td>NUMBER</td>
   </tr>
 </table>
