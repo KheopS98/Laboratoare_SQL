@@ -33,12 +33,15 @@
 ## Problema 1
 <p>Query all columns for all American cities in CITY with populations larger than 100000. The CountryCode for America is USA.</p>
 <p><b>SOLUTION</b></p>
+<pre>
 <code>
 SELECT * FROM city
 WHERE population > 100000 AND countrycode = 'USA';
 </code>
+</pre>
 
 <p><b>OUTPUT</b></p>
+
 <pre>
 3878 Scottsdale USA Arizona 202705 
 3965 Corona USA California 124966 
