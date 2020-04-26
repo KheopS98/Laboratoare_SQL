@@ -72,11 +72,70 @@ WHERE winner LIKE 'John%';
 
 Problema 8.
 /*
-
+Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.
 */
 
+SELECT yr, subject, winner
+FROM nobel
+WHERE (subject = 'Physics' AND yr = 1980) OR (subject = 'Chemistry' AND yr = 1984);
 
+Problema 9.
+/* 
+Show the year, subject, and name of winners for 1980 excluding Chemistry and Medicine
+*/
 
+SELECT yr, subject, winner 
+FROM nobel
+WHERE subject NOT IN('Chemistry', 'Medicine') AND yr = 1980;
+
+Problema 10.
+/*
+Show year, subject, and name of people who won a 'Medicine' prize in an early year (before 1910, not including 1910) together
+with winners of a 'Literature' prize in a later year (after 2004, including 2004).
+*/
+
+SELECT yr, subject, winner 
+FROM nobel
+WHERE (lower(subject) = 'medicine' AND yr < 1910)  OR  (lower(subject) = 'literature' AND  yr >= 2004);
+
+Problema 11.
+/*
+Find all details of the prize won by PETER GRÜNBERG
+
+Non-ASCII characters
+The u in his name has an umlaut. You may find this link useful https://en.wikipedia.org/wiki/%C3%9C#Keyboarding
+*/
+
+SELECT yr, subject, winner
+FROM nobel
+WHERE winner = 'PETER GRÜNBERG';
+
+Problema 12.
+/*
+Find all details of the prize won by EUGENE O'NEILL
+
+Escaping single quotes
+You can't put a single quote in a quote string directly. You can use two single quotes within a quoted string.
+*/
+
+SELECT yr, subject, winner
+FROM nobel
+WHERE winner = "EUGENE O'NEILL";
+
+Problema 13.
+/*
+List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.
+*/
+
+SELECT winner, yr, subject
+FROM nobel
+WHERE winner LIKE 'Sir%'
+ORDER BY yr DESC, winner;
+
+Problema 14.
+/*
+
+*/
 
 
 
