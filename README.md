@@ -145,3 +145,48 @@
 
 </table>
 
+<br><br>
+
+<table>
+  <caption><b>JOB_HISTORY</b></caption>
+  <tr>
+    <th>Field</th>
+    <th>Null ?</th>
+    <th>Type</th>
+  </tr>
+  
+  <tr>
+    <td>EMPLOYEE_ID</td>
+    <td>NOT NULL </td> 
+    <td>NUMBER(6)</td>
+  </tr>
+  
+   <tr>
+    <td>START_DATE</td>
+    <td>NOT NULL</td> 
+    <td>DATE</td>
+  </tr>
+  
+  <tr>
+    <td>END_DATE</td>
+    <td>NOT NULL</td> 
+    <td>DATE</td>
+  </tr>
+  
+  <tr>
+    <td>JOB_ID</td>
+    <td>NOT NULL </td> 
+    <td>VARCHAR2(10)</td>
+  </tr>
+  
+  <tr>
+    <td>DEPARTMENT_ID</td>
+    <td>NOT NULL </td> 
+    <td>NUMBER(4)</td>
+  </tr>
+  
+  
+
+</table>
+
+
