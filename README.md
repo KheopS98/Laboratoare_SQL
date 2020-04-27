@@ -108,3 +108,40 @@
   </tr>
 
 </table>
+
+<br><br>
+
+<table>
+  <caption><b>JOBS</b></caption>
+  <tr>
+    <th>Field</th>
+    <th>Null ?</th>
+    <th>Type</th>
+  </tr>
+  
+  <tr>
+    <td>JOB_ID</td>
+    <td>NOT NULL </td> 
+    <td>VARCHAR2(10)</td>
+  </tr>
+  
+  <tr>
+    <td>JOB_TITLE</td>
+    <td>NOT NULL </td> 
+    <td>VARCHAR2(35)</td>
+  </tr>
+  
+   <tr>
+    <td>MIN_SALARY</td>
+    <td>Yes. </td> 
+    <td>NUMBER(6)</td>
+  </tr>
+  
+  <tr>
+    <td>MAX_SALARY</td>
+    <td>Yes. </td> 
+    <td>NUMBER(6)</td>
+  </tr>
+
+</table>
+
