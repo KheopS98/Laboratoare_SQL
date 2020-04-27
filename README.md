@@ -72,3 +72,38 @@
     <td>NUMBER(4)</td>
   </tr>
 </table>
+
+
+<table>
+  <caption><b>DEPARTMENTS</b></caption>
+  <tr>
+    <th>Field</th>
+    <th>Null ?</th>
+    <th>Type</th>
+  </tr>
+  
+  <tr>
+    <td>DEPARTMENT_ID</td>
+    <td>NOT NULL </td> 
+    <td>NUMBER(4)</td>
+  </tr>
+  
+  <tr>             
+    <td>DEPARTMENT_NAME</td>
+    <td>NOT NULL</td> 
+    <td>VARCHAR2(30)</td>
+  </tr>
+  
+   <tr>
+    <td>MANAGER_ID</td>
+    <td>Yes. </td> 
+    <td>NUMBER(6)</td>
+  </tr>
+  
+<tr>
+    <td>LOCATION_ID</td>
+    <td>Yes. </td> 
+    <td>NUMBER(4)</td>
+  </tr>
+
+</table>
