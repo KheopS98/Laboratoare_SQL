@@ -12,15 +12,13 @@
     <td>NUMBER(6)</td>
   </tr>
   
-  <tr>
-               
+  <tr>             
     <td>FIRST_NAME</td>
     <td>Yes. </td> 
     <td>VARCHAR2(20)</td>
   </tr>
   
-  <tr>
-               
+  <tr>              
     <td>LAST_NAME</td>
     <td> NOT NULL</td> 
     <td>VARCHAR2(25)</td>
