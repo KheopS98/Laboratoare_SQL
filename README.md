@@ -73,7 +73,7 @@
   </tr>
 </table>
 
-<br>
+<br><br>
 
 <table>
   <caption><b>DEPARTMENTS</b></caption>
