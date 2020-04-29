@@ -27,7 +27,7 @@
   </tr>
 </table>
 
-<br><br>
+<br>
 
 <table>
   <caption><b>EMPLOYEES</b></caption>
