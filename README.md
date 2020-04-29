@@ -1,3 +1,34 @@
+
+<table>
+  <caption><b>Info_Connection</b></caption>
+  <tr>
+    <th>NAME</th>
+    <th>CONNECTION</th>
+  </tr>  
+  <tr>
+    <td>Username</td>
+    <td>idd</td> 
+  </tr> 
+  <tr>
+    <td>Password</td>
+    <td>bazededate</td> 
+  </tr>  
+  <tr>
+    <td>Hostname</td>
+    <td>193.226.51.37</td> 
+  </tr>
+  <tr>
+    <td>Port</td>
+    <td>1521</td> 
+  </tr>  
+  <tr>
+    <td>SID</td>
+    <td>o11g</td> 
+  </tr>
+</table>
+
+<br><br>
+
 <table>
   <caption><b>EMPLOYEES</b></caption>
   <tr>
