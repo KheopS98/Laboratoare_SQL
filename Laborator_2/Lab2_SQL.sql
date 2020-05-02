@@ -170,6 +170,20 @@ FROM employees;
 select last_name || ' ' || first_name, hire_date, next_day(add_month(hire_date, 6), 'Monday')
 from employees;
 
+-----------------------------------------------------------------------------------------------
+  
+/* PROBLEMA 14
+Să se afişeze numele angajaţilor şi comisionul. Dacă un angajat nu câştigă comision, să
+se scrie “Fara comision”. Etichetaţi coloana “Comision”.
+*/
+
+SELECT first_name || ' ' ||last_name "Nume ang", commission_pct,
+CASE
+WHEN commission_pct > 0 THEN
+    'Commision'
+ELSE 'Fara comsion'
+END
+FROM employees;
 
 -----------------------------------------------------------------------------------------------
 /* PROBLEMA 16 
